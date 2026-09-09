@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WiFi 哨兵</string>
+    <string name="acc_service_label">WiFi 哨兵检测服务</string>
+    <string name="acc_desc">监听前台应用切换，当打开指定应用且连接目标 WiFi 时发出警告提醒。</string>
+</resources>

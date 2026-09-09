@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 盾牌轮廓 -->
+    <path
+        android:pathData="M54,25 L75,33 L75,53 C75,71 66,82 54,87 C42,82 33,71 33,53 L33,33 Z"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineJoin="round"
+        android:fillColor="@color/white_alpha_20" />
+
+    <!-- WiFi 信号弧线 -->
+    <path
+        android:pathData="M44.45,50.45 A13.5,13.5 0 0 1 63.55,50.45"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M47.64,53.64 A9,9 0 0 1 60.36,53.64"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M50.82,56.82 A4.5,4.5 0 0 1 57.18,56.82"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- 信号点 -->
+    <path
+        android:pathData="M51.5,60a2.5,2.5 0 1 0 5,0a2.5,2.5 0 1 0 -5,0"
+        android:fillColor="#FFFFFF" />
+</vector>

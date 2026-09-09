@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_radius">20dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="card_content_padding">16dp</dimen>
+    <dimen name="icon_size">28dp</dimen>
+</resources>
