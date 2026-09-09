@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "dev.timmoc.wifiwarn"
+    namespace = "dev.weavrik.wifiwarn"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "dev.timmoc.wifiwarn"
+        applicationId = "dev.weavrik.wifiwarn"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

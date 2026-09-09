@@ -1,4 +1,4 @@
-package dev.timmoc.wifiwarn
+package dev.weavrik.wifiwarn
 
 import android.content.Context
 import android.net.ConnectivityManager

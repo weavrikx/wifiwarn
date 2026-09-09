@@ -1,4 +1,4 @@
-package dev.timmoc.wifiwarn
+package dev.weavrik.wifiwarn
 
 import android.accessibilityservice.AccessibilityService
 import android.app.NotificationChannel

@@ -1,4 +1,4 @@
-package dev.timmoc.wifiwarn
+package dev.weavrik.wifiwarn
 
 import android.Manifest
 import android.accessibilityservice.AccessibilityServiceInfo
@@ -30,9 +30,9 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.switchmaterial.SwitchMaterial
-import dev.timmoc.wifiwarn.databinding.ActivityMainBinding
-import dev.timmoc.wifiwarn.databinding.DialogAppPickerBinding
-import dev.timmoc.wifiwarn.databinding.ItemAppBinding
+import dev.weavrik.wifiwarn.databinding.ActivityMainBinding
+import dev.weavrik.wifiwarn.databinding.DialogAppPickerBinding
+import dev.weavrik.wifiwarn.databinding.ItemAppBinding
 
 class MainActivity : AppCompatActivity() {
 

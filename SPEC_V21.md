@@ -51,7 +51,7 @@
 - 通知渠道名「WiFi 警告」→「WiFi 哨兵」。
 - 首页标题「WiFi 警告」→「WiFi 哨兵」(带一个盾牌小图标)。
 - 悬浮窗/Toast 文案里的「WiFi 警告」措辞同步替换为「WiFi 哨兵」。
-- 注意: 包名 applicationId/namespace 保持 dev.timmoc.wifiwarn 不变 (只改显示名)。
+- 注意: 包名 applicationId/namespace 保持 dev.weavrik.wifiwarn 不变 (只改显示名)。
 
 ## 二、验收标准 (Hermes 逐条验证)
 
