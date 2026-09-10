@@ -1,6 +1,10 @@
 # WiFi 警告（WifiWarn）
 
-检测到「指定应用」在前台 **且** 当前连接「指定 WiFi」时，弹出警告（Toast + 通知）。不阻止启动（无 Root、Android 无开放 API 可真正拦截）。
+> 检测到「指定应用」在前台 **且** 当前连接「指定 WiFi」时，弹出警告（Toast + 通知 + 悬浮窗）。不阻止启动（无 Root、Android 无开放 API 可真正拦截）。
+
+**☕ 如果这个小工具帮到了你**：推进独立开发，或获取完整源码套件/定制版本，可以到这里支持我：
+- [爱发电 · 支持我并获取源码套件](https://afdian.com)（成品 APK / 完整源码 / 定制服务）
+- [GitHub Sponsors](https://github.com/sponsors/weavrikx)（一杯咖啡即可）
 
 ## 构建
 
