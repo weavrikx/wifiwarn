@@ -4,6 +4,8 @@
 
 Use cases: a parent keeping an eye on games on the home WiFi; self-discipline on the office WiFi.
 
+**Download:** [latest signed APK](https://github.com/weavrikx/wifiwarn/releases/latest) · [landing page](https://weavrikx.github.io/)
+
 [English](#english) · [中文](#中文)
 
 ---
@@ -15,6 +17,10 @@ Use cases: a parent keeping an eye on games on the home WiFi; self-discipline on
 - When both match, it fires: sound + notification + full-screen overlay
 - 30-second cooldown so it never spams you
 - 100% local. No cloud, no analytics, no data collection
+
+### Download
+- **Signed APK (v1.0, 4.5 MB):** [github.com/weavrikx/wifiwarn/releases/latest](https://github.com/weavrikx/wifiwarn/releases/latest) — install and go.
+- Or [build it yourself](#build) from source in ~2 minutes.
 
 ### License & how this project makes money
 **The source code is MIT — use it, modify it, ship it, sell it. Free, forever.** No bait, no "open core" asterisk.
@@ -51,6 +57,11 @@ No Android Studio required. See `SPEC_V22.md` for the full feature spec.
 
 ### 它做什么
 设定「目标 WiFi SSID」+「目标应用包名」，两者同时命中就弹警告：提示音 + 通知 + 全屏浮窗。冷却 30 秒防刷屏。纯本地运行，不联网、不采集数据。
+
+### 下载
+- **签名成品 APK（v1.0，4.5 MB）：** [GitHub Releases 下载](https://github.com/weavrikx/wifiwarn/releases/latest)，装完即用。
+- 也可以自己编译（见下，约 2 分钟）。
+- 落地页：https://weavrikx.github.io/
 
 ### 授权与商业模式
 **源码 MIT，随便用、随便改、可以商用，永久免费。**
