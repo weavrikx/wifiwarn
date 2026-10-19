@@ -1,0 +1,33 @@
+WiFi Sentry (package name: dev.weavrik.wifiwarn) is a small, privacy-friendly utility that warns you when you open a sensitive app while connected to a Wi-Fi network you have not marked as trusted.
+
+Instead of trying to police the whole device, it does one narrow job: it watches the foreground app and the current Wi-Fi network, and if you open an app you selected while being on an untrusted network, it puts a clear red overlay on the screen ("You opened X while connected to Wi-Fi Y"). That is exactly the moment when you want to be reminded not to type a password, not to pay, and not to paste a 2FA code.
+
+Features
+
+* Trusted network list: mark the Wi-Fi networks you trust (by SSID). Everything else counts as untrusted.
+* Per-app protection: choose which apps should trigger the warning (banking, messaging, browsers, e-mail, ...).
+* Red warning overlay with the app name and the current SSID.
+* Fully on-device. No account, no analytics, no telemetry, no network requests at all - the app has no INTERNET permission.
+* Tiny footprint: around 4.5 MB APK.
+* Dark, Material-inspired UI, simple 3-screen setup.
+
+How it works
+
+The app uses the Android AccessibilityService only to read which app is currently in the foreground (no keystroke logging, no screen content reading, no input injection). Wi-Fi state and SSID are read through the standard system APIs; on Android 10+ the OS requires a location permission for that, which the app asks for explicitly. A lightweight foreground service keeps the watcher alive.
+
+Permissions explained
+
+* Accessibility service - detect the foreground app.
+* Location (approximate is enough) - the OS only hands out the Wi-Fi SSID to apps with it on Android 10+.
+* Display over other apps - draw the warning overlay.
+* Notifications - foreground service notification.
+* Wi-Fi/network state - read the current connection.
+
+Notes
+
+* The app never connects to the network itself; "untrusted" is a decision of the user, not a remote database.
+* No root required.
+
+Language: English (source strings). Kotlin, MIT licensed.
+Source code: https://github.com/weavrikx/wifiwarn
+Releases (signed APK): https://github.com/weavrikx/wifiwarn/releases

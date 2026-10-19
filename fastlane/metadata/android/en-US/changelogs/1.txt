@@ -1,0 +1,5 @@
+1.0
+* First public release
+* Trusted / untrusted Wi-Fi network list (SSID based)
+* Per-app protection with a red warning overlay
+* Fully on-device: no INTERNET permission, no analytics
