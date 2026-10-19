@@ -1,45 +1,79 @@
-# WiFi 警告（WifiWarn）
+# WiFi Beacon · wifiwarn
 
-> 检测到「指定应用」在前台 **且** 当前连接「指定 WiFi」时，弹出警告（Toast + 通知 + 悬浮窗）。不阻止启动（无 Root、Android 无开放 API 可真正拦截）。
+> Warns you when a **specific app comes to the foreground while you're connected to a specific WiFi network**. No root, no blocking — just a sound, a notification, and a full-screen overlay telling you to get back on task.
 
-**☕ 如果这个小工具帮到了你**：推进独立开发，或获取完整源码套件/定制版本，可以到这里支持我：
-- [爱发电 · 支持我并获取源码套件](https://afdian.com)（成品 APK / 完整源码 / 定制服务）
-- [GitHub Sponsors](https://github.com/sponsors/weavrikx)（一杯咖啡即可）
+Use cases: a parent keeping an eye on games on the home WiFi; self-discipline on the office WiFi.
 
-## 构建
+[English](#english) · [中文](#中文)
 
-复制到有 Android Studio 的机器：
+---
 
+## English
+
+### What it does
+- You configure a **target WiFi SSID** + a **target app package name**
+- When both match, it fires: sound + notification + full-screen overlay
+- 30-second cooldown so it never spams you
+- 100% local. No cloud, no analytics, no data collection
+
+### License & how this project makes money
+**The source code is MIT — use it, modify it, ship it, sell it. Free, forever.** No bait, no "open core" asterisk.
+
+What costs money is *time*:
+
+| | What you get | Price |
+|---|---|---|
+| **Free** | This repo. Build it yourself. | ¥0 |
+| **Ready APK** | Install-and-go build, setup guide | ¥9.9 |
+| **Branded build** | Renamed / re-iconed / custom rules, delivered in 2–5 days | ¥99+ |
+
+If you'd rather not fight Gradle, the paid tiers exist. If you're happy to build it, the repo is genuinely complete — that's the point.
+
+### Build
+
+```bash
+# needs JDK 17 + Android SDK (platform 34, build-tools 34)
+./gradlew assembleDebug
+# output: app/build/outputs/apk/debug/app-debug.apk
 ```
-open /root/wifiwarn  (或用 Android Studio Open 该目录)
+
+No Android Studio required. See `SPEC_V22.md` for the full feature spec.
+
+### Requirements
+- Android 8.0+ (minSdk 26), tested on Android 14 real hardware
+- Android 13+: `NEARBY_WIFI_DEVICES` + `POST_NOTIFICATIONS`
+- Android 12/12L: `ACCESS_FINE_LOCATION` (SSID reads are permission-gated)
+- Accessibility service must be enabled manually by the user (system restriction)
+
+---
+
+## 中文
+
+### 它做什么
+设定「目标 WiFi SSID」+「目标应用包名」，两者同时命中就弹警告：提示音 + 通知 + 全屏浮窗。冷却 30 秒防刷屏。纯本地运行，不联网、不采集数据。
+
+### 授权与商业模式
+**源码 MIT，随便用、随便改、可以商用，永久免费。**
+付钱买的是**省时间**：① 开箱即用的成品 APK（¥9.9）② 品牌定制版（¥99 起，换名/换图标/换警告音/加规则，2–5 天交付）。
+不想折腾构建就买成品；愿意自己编译，这个仓库是完整可用的。
+
+### 构建
+```bash
+# 需要 JDK 17 + Android SDK (platform 34 / build-tools 34)
+./gradlew assembleDebug
 ```
 
-- compileSdk 34 / minSdk 26 / targetSdk 34
-- 自带签名 debug 包即可安装：Build → Build APK(s)
-- 或命令行：`./gradlew assembleDebug`（需本机有 Android SDK）
+### 文件
+- `WarnService.kt` — 无障碍服务：前台应用检测 + 警告触发
+- `WifiHelper.kt` — SSID 读取（含 Android 12+ 权限坑处理）
+- `Config.kt` — SharedPreferences 配置
+- `MainActivity.kt` — 配置页 UI
 
-## 使用
+### 已知限制
+- Android 12+ 读 SSID 需「位置 / 附近设备」权限，拒绝则无法判断 WiFi
+- 无障碍服务必须用户手动开启（系统限制，无 API 可自动开）
+- 只提醒、不拦截：无 Root 无法真正阻止应用启动
 
-1. 打开 App，填「目标 WiFi SSID」和「目标应用包名」（如 com.tencent.mm），保存
-   - 「使用当前 WiFi」按钮自动填入当前 SSID
-2. 点「开启无障碍服务」，在系统设置里允许本 App 的无障碍权限
-3. 授予权限：Android 13+ 需要「附近设备」+「通知」；Android 12/12L 需要「位置」
+---
 
-## 行为
-
-- 前台包名 == 目标包名 且 SSID == 目标（忽略大小写；SSID 留空 = 任意 WiFi 都警告）
-- 警告冷却 30 秒，避免刷屏
-- 仅警告，不强制关闭
-
-## 文件
-
-- `MainActivity.kt` 配置页
-- `WarnService.kt` 无障碍服务（前台检测 + 警告）
-- `WifiHelper.kt` SSID 读取
-- `Config.kt` SharedPreferences 配置
-
-## 已知限制
-
-- Android 12+ 读取 SSID 需要定位/附近设备权限，拒绝权限则无法判断 WiFi
-- 无障碍服务需用户手动开启（系统限制，无法代码自动开）
-- 通知在 Android 13+ 需运行时授权
+*Built by [Weavri](https://dev.to/weavrikx). Cloud builds, real-device testing, reproducible artifacts.*
